@@ -30,10 +30,10 @@ create table badge (
         foreign key (userid) references usertp
 );
 
-/* PARTE B -> INSERTAMOS LOS DATOS -> ESTO ES LO QUE NO ME ANDA */
+/* PARTE B -> INSERTAMOS LOS DATOS */
 
-\copy badge from './Badges.tsv' header delimiter ' ' quote ''';
-\copy userID from './Users.tsv' header delimiter ' ' quote ''';
+\copy usertp from './Users.tsv' header delimiter E'\t' quote E'\'' csv;
+\copy badge from './Badges.tsv' header delimiter E'\t' quote E'\'' csv;
 
 
 /* PARTE C -> FUNCIONES */
